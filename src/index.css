@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+/* Cloud console palette. Dark is the default; light overrides below. */
+@theme {
+  --color-bg: #05070a;
+  --color-sunken: #080b10;
+  --color-panel: #0d1117;
+  --color-raised: #111822;
+  --color-line: #1e2633;
+  --color-line-soft: #141b25;
+  --color-line-strong: #2a3442;
+  --color-ink: #e6edf3;
+  --color-soft: #c3ced9;
+  --color-muted: #9aa7b4;
+  --color-faint: #8b97a4;
+  --color-dim: #5b6672;
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --animate-blink: blink 1.1s steps(1) infinite;
+  --animate-scan: scan 1.6s ease-in-out infinite;
+  --animate-pop: pop 300ms ease-out;
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes scan {
+    from {
+      translate: 0 -100%;
+    }
+    to {
+      translate: 0 300%;
+    }
+  }
+  @keyframes pop {
+    from {
+      scale: 0.4;
+      opacity: 0;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      translate: -100% 0;
+    }
+    to {
+      translate: 300% 0;
+    }
+  }
+}
+
+/* Light theme: a deeper sky so accent text stays readable on white. */
+[data-theme='light'] {
+  --color-bg: #f6f8fa;
+  --color-sunken: #eef2f6;
+  --color-panel: #ffffff;
+  --color-raised: #f0f4f8;
+  --color-line: #d8dee4;
+  --color-line-soft: #e6eaef;
+  --color-line-strong: #c3cbd4;
+  --color-ink: #0f1720;
+  --color-soft: #2f3b48;
+  --color-muted: #4a5664;
+  --color-faint: #5e6a78;
+  --color-dim: #8a96a3;
+  --color-accent: #0369a1;
+  --color-accent-hover: #075985;
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+
+  a {
+    @apply text-accent transition-colors hover:text-accent-hover;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
