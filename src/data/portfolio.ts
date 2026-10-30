@@ -41,7 +41,7 @@ export const profile = {
   name: 'McDonald Musimwa',
   handle: 'mcdonald',
   account: 'McDonaldMusimwa',
-  headshot: '/headshot.jpeg',
+  headshot: `${import.meta.env.BASE_URL}headshot.jpeg`,
   availability: 'open to DevOps roles',
   title: 'Developer → DevOps',
   summary:

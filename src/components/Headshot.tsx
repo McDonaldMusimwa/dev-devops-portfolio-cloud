@@ -36,7 +36,7 @@ export function Headshot() {
       </figure>
       <div className="flex flex-col gap-1.5">
         <p className="text-xl font-bold">{profile.name}</p>
-        <p className="font-mono text-sm text-faint">{profile.headshot.slice(1)} · 800×800</p>
+        <p className="font-mono text-sm text-faint">{profile.headshot.split('/').pop()} · 800×800</p>
         <p className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-xs text-soft">
           <span className="relative flex size-2">
             <span className="absolute inline-flex size-full rounded-full bg-accent opacity-75 motion-safe:animate-ping" />
