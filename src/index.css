@@ -82,6 +82,12 @@
 }
 
 @layer base {
+  /* Grid children default to min-width: auto, so a wide code block or long word would stretch
+     its column past a phone screen. Let them shrink; the code blocks scroll inside instead. */
+  .grid > * {
+    min-width: 0;
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;

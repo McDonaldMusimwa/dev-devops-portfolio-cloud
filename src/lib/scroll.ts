@@ -4,7 +4,7 @@ import { prefersReducedMotion } from './motion'
 
 let lenis: Lenis | null = null
 
-// The sticky header is taller on mobile (tabs wrap to a second row), so measure it each time.
+// The sticky header height differs between phone and desktop layouts, so measure it each time.
 function headerOffset(): number {
   return (document.querySelector('header')?.offsetHeight ?? 0) + 8
 }
